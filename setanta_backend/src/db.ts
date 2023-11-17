@@ -20,10 +20,10 @@ console.log(typeof password);
 
 
 const pool = new PgPool({
-  user: process.env.DB_USER,
-  host: process.env.DB_HOST,
-  database: process.env.DB_DATABASE,
-  password: password,
+  user: 'postgres',
+  host: 'localhost',
+  database: 'setanta_shifts',
+  password: 'mishkinaz',
   port: 5432,
 });
 
