@@ -5,26 +5,23 @@ import { parseDbPassword } from './utils';
 
 
 dotenv.config();
-console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
 
-if (!process.env.DB_PASSWORD) {
-  console.error('DB_PASSWORD is not defined in the environment.');
+
+if (!process.env.DB_PASSWORD || !process.env.DB_USER || !process.env.DB_HOST || !process.env.DB_DATABASE) {
+  console.error('Database configuration is incomplete.');
   process.exit(1);
 }
 
-console.log('Attempting to connect to PostgreSQL...');
-
 const password = parseDbPassword(process.env.DB_PASSWORD);
+console.log(password, typeof password);
 
-console.log(typeof password);
 
-
-const pool = new PgPool({
-  user: 'postgres',
-  host: 'localhost',
-  database: 'setanta_shifts',
-  password: 'mishkinaz',
-  port: 5432,
+export const pool = new PgPool({
+  user: process.env.DB_USER,
+  host: process.env.DB_HOST,
+  database: process.env.DB_DATABASE,
+  password: password,
+  port: Number(process.env.DB_PORT) || 5432, 
 });
 
 pool.query('SELECT NOW()', (err: Error, result: QueryResult<YourRowType>) => {
@@ -43,5 +40,6 @@ export const connectToDatabase = async () => {
     console.error('Error connecting to the database:', error);
   }
 };
+
 
 

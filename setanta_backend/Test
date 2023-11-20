@@ -1,0 +1,58 @@
+Table: 
+  
+  employees:
+    id: 
+    firstName: 
+    lastName: 
+    email: 
+    password: hash paroli
+    isAdmin: boolean (0/1)
+    lastLogin: 
+    vacation: boolean(0/1)
+
+  shifts:
+    id: 1
+    name: A
+    durations: 08:00 - 16:00
+
+
+  days:
+    id: 125
+    day: 4 
+    month: 12 
+    year: 2023
+    isWeeknd: false | true
+
+   employees_week_day_shifts:
+      id:
+      employeeId:
+      shiftId:
+      dayId:
+      vacation: 0/1
+
+  rules: 
+  ruleId
+  type(before after),
+  beforeShifid,
+  rejected,
+  afterShiftid,
+
+
+
+
+
+  requests:
+    id: 
+    employeeRequesterId: 1
+    targetEmploreeId: 2
+    week_day_id: 5
+    targetShift: 2
+    employeeShift: 1
+
+
+
+
+
+Tasks:
+  1) Authentication both with password and Google Auth.
+  2) Create table on front-end

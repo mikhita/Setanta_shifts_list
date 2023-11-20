@@ -1,7 +1,8 @@
-import { Pool, QueryResult } from 'pg';
+import { QueryResult } from 'pg';
 import { Weekday } from '../types';
+import { pool } from '../db';
 
-const pool = new Pool();
+
 
 export const getWeekdays = async (): Promise<Weekday[]> => {
   // eslint-disable-next-line no-useless-catch

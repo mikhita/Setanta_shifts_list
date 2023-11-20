@@ -1,4 +1,3 @@
-// middleware/dbConnectMiddleware.ts
 import { Request, Response, NextFunction } from 'express';
 import { connectToDatabase } from '../db';
 

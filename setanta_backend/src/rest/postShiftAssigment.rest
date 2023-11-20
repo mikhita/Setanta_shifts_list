@@ -1,0 +1,8 @@
+POST http://localhost:3000/shift-assignments
+Content-Type: application/json
+
+{
+  "employeeName": "Giorgi Kalkhitashvili",
+  "dayOfWeek": "Monday",
+  "shiftName": "Shift B"
+}

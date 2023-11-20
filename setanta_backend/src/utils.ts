@@ -9,3 +9,4 @@ export const parseDbPassword = (password: unknown): string => {
 
   return password;
 };
+

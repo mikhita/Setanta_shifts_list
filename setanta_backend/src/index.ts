@@ -4,7 +4,6 @@ import weekdaysRouter from './routes/weekdaysRouter';
 import shiftsRouter from './routes/shiftsRouter';
 import shiftAssignmentsRouter from './routes/shiftAssignmentsRouter';
 import { connectToDatabase } from './db';
-import { getShifts } from './services/shiftsService';
 import { dbConnectMiddleware } from './middlewears/dbConnectMiddleware';
 
 
@@ -31,16 +30,8 @@ const PORT = process.env.PORT || 3000;
 app.use(dbConnectMiddleware);
 
 
-// eslint-disable-next-line @typescript-eslint/no-misused-promises
-app.get('/shifts', async (_req, res) => {
-  try {
-    const shifts = await getShifts();
-    res.json(shifts);
-  } catch (error) {
-    console.error('Error retrieving shifts:', error);
-    res.status(500).send('Internal Server Error');
-  }
-});
+
+
 
 
 app.listen(PORT, () => {

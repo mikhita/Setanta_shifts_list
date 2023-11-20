@@ -1,7 +1,8 @@
-import { Pool, QueryResult } from 'pg';
+import { QueryResult } from 'pg';
 import { Shift } from '../types';
+import { pool } from '../db';
 
-const pool = new Pool();
+
 
 export const getShifts = async (): Promise<Shift[]> => {
   // eslint-disable-next-line no-useless-catch
