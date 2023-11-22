@@ -1,0 +1,12 @@
+POST http://localhost:3000/registration/register
+Content-Type: application/json
+
+{
+  "firstName": "Giorgi",
+  "lastName": "Kalkhitashvili",
+  "email": "giorgi@setanta.com",
+  "password": "password",
+  "isAdmin": true,
+  "lastLogin":"2023-11-23T10:00:00Z",
+  "vacation": false
+}

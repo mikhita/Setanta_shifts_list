@@ -5,7 +5,7 @@ Table:
     firstName: 
     lastName: 
     email: 
-    password: hash paroli
+    password: hash password
     isAdmin: boolean (0/1)
     lastLogin: 
     vacation: boolean(0/1)
@@ -16,9 +16,7 @@ Table:
     durations: 08:00 - 16:00
 
 
-  days:
-    id: 125
-    day: 4 
+  weekdays:
     month: 12 
     year: 2023
     isWeeknd: false | true
@@ -28,12 +26,12 @@ Table:
       employeeId:
       shiftId:
       dayId:
-      vacation: 0/1
+      vacation: boolean
 
   rules: 
   ruleId
   type(before after),
-  beforeShifid,
+  beforeShiftid,
   rejected,
   afterShiftid,
 

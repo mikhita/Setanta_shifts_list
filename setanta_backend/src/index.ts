@@ -5,6 +5,8 @@ import shiftsRouter from './routes/shiftsRouter';
 import shiftAssignmentsRouter from './routes/shiftAssignmentsRouter';
 import { connectToDatabase } from './db';
 import { dbConnectMiddleware } from './middlewears/dbConnectMiddleware';
+import authRouter from './routes/authRouter';
+import registrationRouter from './routes/registrationRouter';
 
 
 void connectToDatabase();
@@ -23,6 +25,9 @@ app.use('/employees', employeeRouter);
 app.use('/weekdays', weekdaysRouter);
 app.use('/shifts', shiftsRouter);
 app.use('/shift-assignments', shiftAssignmentsRouter);
+app.use('/auth', authRouter);
+app.use('/registration', registrationRouter);
+
 
 const PORT = process.env.PORT || 3000;
 
