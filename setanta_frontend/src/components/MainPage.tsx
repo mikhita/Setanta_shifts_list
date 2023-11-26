@@ -1,5 +1,6 @@
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import DataTable from "./DataTable";
 
 
 
@@ -11,7 +12,7 @@ const MainPage = () => {
   };
   return (
     <div>
-      main page
+      <DataTable/>
       <Button onClick={handleSubmit}>exit</Button>
     </div>
   );
